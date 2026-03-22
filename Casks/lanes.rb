@@ -11,6 +11,11 @@ cask "lanes" do
 
   app "Lanes.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/Lanes.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/com.lanes.app",
     "~/Library/Caches/com.lanes.app",
