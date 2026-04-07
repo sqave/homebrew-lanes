@@ -1,15 +1,20 @@
 cask "lanes-stage" do
-  version "0.31.5"
-  sha256 "8c84bcebe8fb2e37721b4dac9855edc94dcd7481f8a9d919df441362eab360a6"
+  version "0.31.6"
+  sha256 "f7e268985feb5b92eca1e5d812be3e6c3fe746e0609f6ae6bdf9b5694823d3c1"
 
-  url "https://github.com/sqave/lanes-app/releases/download/v#{version}/lanes-stage-universal.tar.gz"
+  url "https://github.com/sqave/lanes-app/releases/download/latest/lanes-stage-universal.tar.gz"
   name "Lanes Stage"
-  desc "A minimal local-first task board (staging)"
+  desc "Mission control for AI coding agents (staging)"
   homepage "https://github.com/sqave/lanes-app"
 
   depends_on macos: ">= :ventura"
 
   app "Lanes Stage.app"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/Lanes Stage.app"]
+  end
 
   zap trash: [
     "~/.lanes-stage",
