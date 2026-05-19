@@ -1,6 +1,6 @@
 cask "lanes-stage" do
-  version "0.40.0"
-  sha256 "51d7fb02c8fd5104c7ed1e0b0d0b4948277ed245a5b4ec29d582dc548974df50"
+  version "0.40.2"
+  sha256 "b7f3a9d099e4266781e7be8ff1fc608253a4a66aa00af372c31859ebd2681197"
 
   url "https://github.com/sqave/lanes-app/releases/download/v#{version}/lanes-stage-universal.tar.gz"
   name "Lanes Stage"
