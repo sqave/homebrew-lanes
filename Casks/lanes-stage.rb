@@ -7,7 +7,7 @@ cask "lanes-stage" do
   desc "Mission control for AI coding agents (staging)"
   homepage "https://github.com/sqave/lanes-app"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Lanes Stage.app"
 
