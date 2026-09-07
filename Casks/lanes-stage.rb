@@ -1,6 +1,6 @@
 cask "lanes-stage" do
-  version "0.48.7"
-  sha256 "d85a6598b83544c025120ee49028d658d52e941f63bf88ee9af673844b95ad8c"
+  version "0.48.8"
+  sha256 "9335ea6d1ac7144841ecc5f9b01c324340741310afa0a1bd3d73956aa966e6d6"
 
   url "https://github.com/sqave/lanes-app/releases/download/v#{version}/lanes-stage-universal.tar.gz"
   name "Lanes Stage"
@@ -11,9 +11,8 @@ cask "lanes-stage" do
 
   app "Lanes Stage.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/Lanes Stage.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Lanes Stage.app"]
   end
 
   zap trash: [
